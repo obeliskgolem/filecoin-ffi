@@ -123,6 +123,7 @@ pub unsafe extern "C" fn fil_aggregate(
 /// * `flattened_digests_ptr`     - pointer to a byte array containing digests
 /// * `flattened_digests_len`     - length of the byte array (multiple of DIGEST_BYTES)
 /// * `flattened_public_keys_ptr` - pointer to a byte array containing public keys
+/// * `flattened_public_keys_len` - length of the array
 #[no_mangle]
 pub unsafe extern "C" fn fil_verify(
     signature_ptr: *const u8,
@@ -184,6 +185,7 @@ pub unsafe extern "C" fn fil_verify(
 /// * `messages_sizes_ptr`        - pointer to an array containing the lengths of the messages
 /// * `messages_len`              - length of the two messages arrays
 /// * `flattened_public_keys_ptr` - pointer to a byte array containing public keys
+/// * `flattened_public_keys_len` - length of the array
 #[no_mangle]
 pub unsafe extern "C" fn fil_hash_verify(
     signature_ptr: *const u8,
